@@ -1,10 +1,13 @@
 {
   "name": "adb-autoconnect",
-  "module": "src/index.ts",
   "version": "1.0.0",
   "description": "Automatically discover and connect to wireless ADB devices via mDNS service discovery.",
   "author": "AugusDogus",
   "license": "MIT",
+  "type": "module",
+  "bin": {
+    "adb-autoconnect": "./src/index.ts"
+  },
   "scripts": {
     "start": "bun run src/index.ts",
     "dev": "bun run --watch src/index.ts",
@@ -15,8 +18,30 @@
     "lint": "biome lint --write .",
     "lint:check": "biome lint ."
   },
-  "type": "module",
-  "private": true,
+  "keywords": [
+    "adb",
+    "android",
+    "wireless",
+    "mdns",
+    "debug",
+    "connect",
+    "automation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AugusDogus/adb-autoconnect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AugusDogus/adb-autoconnect/issues"
+  },
+  "homepage": "https://github.com/AugusDogus/adb-autoconnect#readme",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "engines": {
+    "bun": ">=1.0.0"
+  },
   "dependencies": {
     "commander": "^14.0.1",
     "zod": "^4.1.11"

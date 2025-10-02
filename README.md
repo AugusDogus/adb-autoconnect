@@ -2,38 +2,66 @@
 
 Automatically discover and connect to wireless ADB devices via mDNS service discovery.
 
-## Installation
+## Installation & Usage
+
+### Option 1: Run with Bun (requires Bun installed)
 
 ```bash
-bun install
+# Run directly with bunx (no installation needed)
+bunx adb-autoconnect
+
+# Or install globally
+bun install -g adb-autoconnect
+adb-autoconnect
 ```
 
-## Usage
+### Option 2: Download Pre-built Executables
+
+Download the executable for your platform from [GitHub Releases](https://github.com/AugusDogus/adb-autoconnect/releases) - no runtime required!
+
+- **Windows**: `adb-autoconnect-windows.exe`
+- **macOS**: `adb-autoconnect-macos`
+- **Linux**: `adb-autoconnect-linux`
+
+## Usage Examples
 
 ```bash
 # Default: minimal output - just shows "connected to <ip:port>"
-bun run src/index.ts
+bunx adb-autoconnect
 
 # List discovered devices without connecting
-bun run src/index.ts --list
+bunx adb-autoconnect --list
 
 # Connect to all discovered devices
-bun run src/index.ts --all
+bunx adb-autoconnect --all
 
 # Info mode: show discovery progress and connection attempts
-bun run src/index.ts --info
+bunx adb-autoconnect --info
 
 # Verbose mode: show all available information including device list
-bun run src/index.ts --verbose
+bunx adb-autoconnect --verbose
 
 # Silent mode: suppress all output
-bun run src/index.ts --silent
+bunx adb-autoconnect --silent
 
 # Increase discovery timeout (default: 15000ms)
-bun run src/index.ts --timeout 20000
+bunx adb-autoconnect --timeout 20000
 
 # Combine options
-bun run src/index.ts --all --info --timeout 30000
+bunx adb-autoconnect --all --info --timeout 30000
+```
+
+## Development
+
+```bash
+# Install dependencies
+bun install
+
+# Run locally
+bun run src/index.ts
+
+# Build executables for all platforms
+bun run build
 ```
 
 ## Log Levels
