@@ -1,6 +1,6 @@
 {
   "name": "adb-autoconnect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Automatically discover and connect to wireless ADB devices via mDNS service discovery.",
   "author": "AugusDogus",
   "license": "MIT",
