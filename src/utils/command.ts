@@ -11,7 +11,7 @@ export async function executeCommand(cmd: string[]) {
   const proc = Bun.spawn(cmd, {
     stdout: "pipe",
     stderr: "pipe",
-    env: { ADB_MDNS_OPENSCREEN: "1" },
+    env: { ...process.env, ADB_MDNS_OPENSCREEN: "1" },
   });
 
   const out = await new Response(proc.stdout).text();
